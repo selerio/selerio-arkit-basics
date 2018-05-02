@@ -14,6 +14,8 @@
 		F09F9A302098B83A00D13BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09F9A2F2098B83A00D13BAA /* Assets.xcassets */; };
 		F09F9A332098B83A00D13BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09F9A312098B83A00D13BAA /* LaunchScreen.storyboard */; };
 		F09F9A3E2098B83A00D13BAA /* SelerioARKitBasicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F9A3D2098B83A00D13BAA /* SelerioARKitBasicsTests.swift */; };
+		F0D7C8412098CD9A00481DBE /* SelerioARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D7C8402098CD9A00481DBE /* SelerioARKit.framework */; };
+		F0D7C8422098CD9A00481DBE /* SelerioARKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0D7C8402098CD9A00481DBE /* SelerioARKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,20 @@
 			remoteInfo = SelerioARKitBasics;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F0D7C8432098CD9A00481DBE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F0D7C8422098CD9A00481DBE /* SelerioARKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F09F9A232098B83900D13BAA /* SelerioARKitBasics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelerioARKitBasics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +54,8 @@
 		F09F9A392098B83A00D13BAA /* SelerioARKitBasicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelerioARKitBasicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09F9A3D2098B83A00D13BAA /* SelerioARKitBasicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelerioARKitBasicsTests.swift; sourceTree = "<group>"; };
 		F09F9A3F2098B83A00D13BAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F09F9A492098B86000D13BAA /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
+		F0D7C8402098CD9A00481DBE /* SelerioARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SelerioARKit.framework; path = "../SelerioNativeXR/build/Release-iphoneos/SelerioARKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D7C8412098CD9A00481DBE /* SelerioARKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +80,11 @@
 		F09F9A1A2098B83900D13BAA = {
 			isa = PBXGroup;
 			children = (
+				F0D7C8402098CD9A00481DBE /* SelerioARKit.framework */,
 				F09F9A252098B83900D13BAA /* SelerioARKitBasics */,
 				F09F9A3C2098B83A00D13BAA /* SelerioARKitBasicsTests */,
 				F09F9A242098B83900D13BAA /* Products */,
+				F09F9A482098B86000D13BAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +120,14 @@
 			path = SelerioARKitBasicsTests;
 			sourceTree = "<group>";
 		};
+		F09F9A482098B86000D13BAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F09F9A492098B86000D13BAA /* ARKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +138,7 @@
 				F09F9A1F2098B83900D13BAA /* Sources */,
 				F09F9A202098B83900D13BAA /* Frameworks */,
 				F09F9A212098B83900D13BAA /* Resources */,
+				F0D7C8432098CD9A00481DBE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -364,7 +394,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B97M96HFJU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SelerioARKitBasics/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,7 +417,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B97M96HFJU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SelerioARKitBasics/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
