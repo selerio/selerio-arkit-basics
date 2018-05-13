@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F00380F420A8A4930003D2CF /* SelerioARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00380F320A8A4930003D2CF /* SelerioARKit.framework */; };
+		F00380F520A8A4930003D2CF /* SelerioARKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F00380F320A8A4930003D2CF /* SelerioARKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F09F9A272098B83900D13BAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F9A262098B83900D13BAA /* AppDelegate.swift */; };
 		F09F9A292098B83900D13BAA /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F09F9A282098B83900D13BAA /* art.scnassets */; };
 		F09F9A2B2098B83900D13BAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F9A2A2098B83900D13BAA /* ViewController.swift */; };
@@ -14,8 +16,6 @@
 		F09F9A302098B83A00D13BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09F9A2F2098B83A00D13BAA /* Assets.xcassets */; };
 		F09F9A332098B83A00D13BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09F9A312098B83A00D13BAA /* LaunchScreen.storyboard */; };
 		F09F9A3E2098B83A00D13BAA /* SelerioARKitBasicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F9A3D2098B83A00D13BAA /* SelerioARKitBasicsTests.swift */; };
-		F0D7C8412098CD9A00481DBE /* SelerioARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D7C8402098CD9A00481DBE /* SelerioARKit.framework */; };
-		F0D7C8422098CD9A00481DBE /* SelerioARKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0D7C8402098CD9A00481DBE /* SelerioARKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F0D7C8432098CD9A00481DBE /* Embed Frameworks */ = {
+		F00380F620A8A4930003D2CF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F0D7C8422098CD9A00481DBE /* SelerioARKit.framework in Embed Frameworks */,
+				F00380F520A8A4930003D2CF /* SelerioARKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F00380F320A8A4930003D2CF /* SelerioARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SelerioARKit.framework; sourceTree = "<group>"; };
 		F09F9A232098B83900D13BAA /* SelerioARKitBasics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelerioARKitBasics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09F9A262098B83900D13BAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09F9A282098B83900D13BAA /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		F09F9A3D2098B83A00D13BAA /* SelerioARKitBasicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelerioARKitBasicsTests.swift; sourceTree = "<group>"; };
 		F09F9A3F2098B83A00D13BAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F09F9A492098B86000D13BAA /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
-		F0D7C8402098CD9A00481DBE /* SelerioARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SelerioARKit.framework; path = "../SelerioNativeXR/build/Release-iphoneos/SelerioARKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0D7C8412098CD9A00481DBE /* SelerioARKit.framework in Frameworks */,
+				F00380F420A8A4930003D2CF /* SelerioARKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +80,7 @@
 		F09F9A1A2098B83900D13BAA = {
 			isa = PBXGroup;
 			children = (
-				F0D7C8402098CD9A00481DBE /* SelerioARKit.framework */,
+				F00380F320A8A4930003D2CF /* SelerioARKit.framework */,
 				F09F9A252098B83900D13BAA /* SelerioARKitBasics */,
 				F09F9A3C2098B83A00D13BAA /* SelerioARKitBasicsTests */,
 				F09F9A242098B83900D13BAA /* Products */,
@@ -138,7 +138,7 @@
 				F09F9A1F2098B83900D13BAA /* Sources */,
 				F09F9A202098B83900D13BAA /* Frameworks */,
 				F09F9A212098B83900D13BAA /* Resources */,
-				F0D7C8432098CD9A00481DBE /* Embed Frameworks */,
+				F00380F620A8A4930003D2CF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -392,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B97M96HFJU;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -415,6 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B97M96HFJU;
 				FRAMEWORK_SEARCH_PATHS = (

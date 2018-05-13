@@ -15,10 +15,16 @@ import SelerioARKit
 class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    var label = UILabel()
+    var toast = UIVisualEffectView()
+    
     var smartSession: ARSmartSession!
+    var apiKey = "API-KEY"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSubviews()
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -33,9 +39,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
         sceneView.scene = scene
         
         sceneView.autoenablesDefaultLighting = true
-        sceneView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(ViewController.handleTap(tapRecognizer:))))
         
-        smartSession = ARSmartSession(apiKey: "APIKEY", sceneView: sceneView)
+        smartSession = ARSmartSession(apiKey: apiKey, sceneView: sceneView)
         smartSession.delegate = self
     }
     
@@ -44,6 +49,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        configuration.isLightEstimationEnabled = true
+        if #available(iOS 11.3, *) {
+            configuration.planeDetection = [.horizontal, .vertical]
+        } else {
+            // Fallback on earlier versions
+            configuration.planeDetection = [.horizontal]
+        }
 
         // Run the view's session
         sceneView.session.run(configuration)
@@ -97,13 +109,22 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
     // MARK: - ARSmartSessionDelegate
     func session(_ session: ARSmartSession, didFailWithError error: Error) {
         print("Smart Session Error: \(error)")
+        DispatchQueue.main.async {
+            self.showToast("error: \(error.localizedDescription)")
+        }
     }
     
     func session(_ session: ARSmartSession, didDetectScene scene: ARPhysicalScene?) {
         if let scene = scene {
-            print("Number of physical objects: ", scene.anchors.count)
+            print("Successfully retrieved \(scene.anchors.count) objects")
+            DispatchQueue.main.async {
+                self.hideToast()
+            }
         } else {
             print("Scene not detected")
+            DispatchQueue.main.async {
+                self.showToast("No objects detected")
+            }
         }
     }
     
@@ -126,15 +147,130 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
     
     // MARK: - Gestures
     
-    @objc func handleTap(tapRecognizer: UITapGestureRecognizer) {
+    @objc func handleTap(sender: Any) {
         smartSession.detect()
+        showToast("Finding smart anchors")
+    }
+    
+    @objc func handleDebugSwitch(sender: Any) {
+        smartSession.togglePointCloudVisualization()
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            sceneView.scene = SCNScene(named: "art.scnassets/ship.scn")!
-            smartSession = ARSmartSession(apiKey: "APIKEY", sceneView: sceneView)
-            smartSession.run()
+            smartSession.reinitialize()
+        }
+    }
+}
+
+extension ViewController {
+    func showToast(_ text: String) {
+        label.text = text
+        
+        guard toast.alpha == 0 else {
+            return
+        }
+        
+        toast.layer.masksToBounds = true
+        toast.layer.cornerRadius = 7.5
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.toast.alpha = 1
+            self.toast.frame = self.toast.frame.insetBy(dx: -5, dy: -5)
+        })
+        
+    }
+    
+    func hideToast() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.toast.alpha = 0
+            self.toast.frame = self.toast.frame.insetBy(dx: 5, dy: 5)
+        })
+    }
+    
+    func setupSubviews() {
+        let overlayView = UIView()
+        overlayView.backgroundColor = UIColor.clear
+        overlayView.translatesAutoresizingMaskIntoConstraints = false
+        sceneView.addSubview(overlayView)
+        
+        toast.effect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+        toast.translatesAutoresizingMaskIntoConstraints = false
+        overlayView.addSubview(toast)
+        toast.layer.cornerRadius = 5
+        toast.clipsToBounds = true
+        
+        let contentView = toast.contentView
+        label.numberOfLines = 0
+        label.textColor = .black
+        label.textAlignment = .center
+        label.font = label.font.withSize(13)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .clear
+        contentView.addSubview(label)
+        
+        let toolsView = UIVisualEffectView()
+        toolsView.translatesAutoresizingMaskIntoConstraints = false
+        toolsView.layer.cornerRadius = 10
+        overlayView.addSubview(toolsView)
+        let toggleDebugSwitch = UISwitch()
+        let toggleDebugLabel = UILabel()
+        let detectButton = UIButton.init(type: .roundedRect)
+        toggleDebugLabel.text = "AR points"
+        toggleDebugLabel.textColor = .white
+        toggleDebugLabel.font = toggleDebugLabel.font.withSize(16)
+        toggleDebugSwitch.isOn = true
+        detectButton.setTitle("Detect", for: .normal)
+        detectButton.layer.cornerRadius = 10
+        detectButton.backgroundColor = .white
+        toggleDebugLabel.translatesAutoresizingMaskIntoConstraints = false
+        toggleDebugSwitch.translatesAutoresizingMaskIntoConstraints = false
+        detectButton.translatesAutoresizingMaskIntoConstraints = false
+        toolsView.contentView.addSubview(toggleDebugLabel)
+        toolsView.contentView.addSubview(toggleDebugSwitch)
+        toolsView.contentView.addSubview(detectButton)
+                
+        NSLayoutConstraint.activate([
+            overlayView.centerXAnchor.constraint(equalTo: sceneView.safeAreaLayoutGuide.centerXAnchor),
+            overlayView.centerYAnchor.constraint(equalTo: sceneView.safeAreaLayoutGuide.centerYAnchor),
+            overlayView.widthAnchor.constraint(equalTo: sceneView.safeAreaLayoutGuide.widthAnchor),
+            overlayView.heightAnchor.constraint(equalTo: sceneView.safeAreaLayoutGuide.heightAnchor),
+            
+            toolsView.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -25.0),
+            toolsView.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor),
+            toolsView.widthAnchor.constraint(equalTo: overlayView.widthAnchor),
+            toolsView.heightAnchor.constraint(equalToConstant: 40.0),
+            
+            detectButton.centerXAnchor.constraint(equalTo: toolsView.contentView.centerXAnchor),
+            detectButton.centerYAnchor.constraint(equalTo: toolsView.contentView.centerYAnchor),
+            detectButton.heightAnchor.constraint(equalTo: toolsView.contentView.heightAnchor, multiplier: 0.75),
+            detectButton.widthAnchor.constraint(equalTo: toolsView.contentView.widthAnchor, multiplier: 0.16),
+            toggleDebugSwitch.trailingAnchor.constraint(equalTo: detectButton.leadingAnchor),
+            toggleDebugSwitch.centerYAnchor.constraint(equalTo: detectButton.centerYAnchor),
+            toggleDebugSwitch.heightAnchor.constraint(equalTo: detectButton.heightAnchor),
+            toggleDebugSwitch.widthAnchor.constraint(equalTo: detectButton.widthAnchor, multiplier: 1.2),
+            toggleDebugLabel.leftAnchor.constraintGreaterThanOrEqualToSystemSpacingAfter(toolsView.contentView.leftAnchor, multiplier: 1.2),
+            toggleDebugLabel.centerYAnchor.constraint(equalTo: detectButton.centerYAnchor),
+            toggleDebugLabel.heightAnchor.constraint(equalTo: detectButton.heightAnchor),
+            toggleDebugLabel.widthAnchor.constraint(equalTo: detectButton.widthAnchor, multiplier: 1.2),
+            
+            toast.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 5.0),
+            toast.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor),
+            toast.widthAnchor.constraint(equalToConstant: 200.0),
+            toast.heightAnchor.constraint(equalToConstant: 30.0),
+            
+            label.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            label.heightAnchor.constraint(equalTo: contentView.heightAnchor),
+            label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+        ])
+        
+        detectButton.addTarget(self, action: #selector(handleTap(sender:)), for: .touchUpInside)
+        toggleDebugSwitch.addTarget(self, action: #selector(handleDebugSwitch(sender:)), for: .touchUpInside)
+        
+        showToast("Tip: Shake to restart a session")
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
+            self.hideToast()
         }
     }
 }
