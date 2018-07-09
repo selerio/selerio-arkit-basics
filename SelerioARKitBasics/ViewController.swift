@@ -19,7 +19,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
     var toast = UIVisualEffectView()
     
     var smartSession: ARSmartSession!
-    var apiKey = "API-KEY"
+    var apiKey = "API-Key"
     
     
     override func viewDidLoad() {
@@ -93,14 +93,18 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
                 if (error != nil) {
                     print("Error: \(String(describing: error))")
                 } else {
+                    geometry?.firstMaterial?.diffuse.contents = UIColor.yellow
+                    geometry?.firstMaterial?.fillMode = .lines
+                    geometry?.firstMaterial?.lightingModel = .constant
+                    geometry?.firstMaterial?.isDoubleSided = true
                     node.addChildNode(SCNNode(geometry: geometry))
                 }
             }
             let textNode = SCNNode(geometry: SCNText(string: smartAnchor.label, extrusionDepth: 0.01))
             let textBoundingBox = textNode.boundingBox
             textNode.pivot = SCNMatrix4MakeTranslation((textBoundingBox.max.x - textBoundingBox.min.x) / 2, 0, 0)
-            textNode.position = SCNVector3(0.0, 0.45, 0.0)
-            textNode.scale = SCNVector3(0.008/node.scale.x, 0.008/node.scale.y, 0.008/node.scale.z)
+            textNode.position = SCNVector3(0.0, 0.07, 0.0)
+            textNode.scale = SCNVector3(0.006/node.scale.x, 0.006/node.scale.y, 0.006/node.scale.z)
             textNode.geometry?.firstMaterial?.lightingModel = .constant
             node.addChildNode(textNode)
         }
@@ -267,6 +271,10 @@ extension ViewController {
         
         detectButton.addTarget(self, action: #selector(handleTap(sender:)), for: .touchUpInside)
         toggleDebugSwitch.addTarget(self, action: #selector(handleDebugSwitch(sender:)), for: .touchUpInside)
+        
+        // Comment to toggle visualization of ARKit points and planes
+         toggleDebugLabel.isHidden = true
+         toggleDebugSwitch.isHidden = true
         
         showToast("Tip: Shake to restart a session")
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in

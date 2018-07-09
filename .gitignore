@@ -1,1 +1,2 @@
-SelerioARKit.framework/
+SelerioARKit.framework*
+*xcuserdata*
