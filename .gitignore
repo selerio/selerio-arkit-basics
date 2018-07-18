@@ -1,2 +1,6 @@
 SelerioARKit.framework*
 *xcuserdata*
+
+Pods/
+Podfile.lock 
+*.xcworkspace 

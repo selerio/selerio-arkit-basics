@@ -1,9 +1,25 @@
+
 # selerio-arkit-basics
+
+
 
 Welcome to our demo app for ARKit!
 
+
+
 To get started:
 
+
+
 - Get your API Key from the [developer console](https://console.selerio.io/dashboard)
-- Download our Swift framework, [SelerioARKit.framework](https://console.selerio.io/download_sdk), and unzip it into the top folder
-- Open the xcode project, set the apiKey to your key, and build the demo app on you phone.
+
+- Clone this repo from [here](https://github.com/selerio/selerio-arkit-basics.git)
+
+- Install cocoapods, if not already installed, using `sudo gem install cocoapods`
+
+- From the root directory run pod install 
+
+- Open the project in xcode by clicking on `SelerioARKitBasics.xcworkspace`
+
+- Build the project and run it on an ARKit compatible iOS device
+

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F00380F420A8A4930003D2CF /* SelerioARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00380F320A8A4930003D2CF /* SelerioARKit.framework */; };
-		F00380F520A8A4930003D2CF /* SelerioARKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F00380F320A8A4930003D2CF /* SelerioARKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B7B02F3420FF52EF00458980 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B7B02F3320FF52EF00458980 /* README.md */; };
+		C678866A715D7730F12D3FF9 /* Pods_SelerioARKitBasics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4709990F5D5FF86970B037 /* Pods_SelerioARKitBasics.framework */; };
 		F09F9A272098B83900D13BAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F9A262098B83900D13BAA /* AppDelegate.swift */; };
 		F09F9A292098B83900D13BAA /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F09F9A282098B83900D13BAA /* art.scnassets */; };
 		F09F9A2B2098B83900D13BAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F9A2A2098B83900D13BAA /* ViewController.swift */; };
@@ -35,7 +35,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F00380F520A8A4930003D2CF /* SelerioARKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,7 +42,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F00380F320A8A4930003D2CF /* SelerioARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SelerioARKit.framework; sourceTree = "<group>"; };
+		0E4709990F5D5FF86970B037 /* Pods_SelerioARKitBasics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SelerioARKitBasics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D032EC76977B26F52BCFBF7 /* Pods-SelerioARKitBasics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelerioARKitBasics.release.xcconfig"; path = "Pods/Target Support Files/Pods-SelerioARKitBasics/Pods-SelerioARKitBasics.release.xcconfig"; sourceTree = "<group>"; };
+		3DF49D84EBF9E499F83D1A16 /* Pods-SelerioARKitBasics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelerioARKitBasics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelerioARKitBasics/Pods-SelerioARKitBasics.debug.xcconfig"; sourceTree = "<group>"; };
+		B7B02F3320FF52EF00458980 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F09F9A232098B83900D13BAA /* SelerioARKitBasics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelerioARKitBasics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09F9A262098B83900D13BAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09F9A282098B83900D13BAA /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F00380F420A8A4930003D2CF /* SelerioARKit.framework in Frameworks */,
+				C678866A715D7730F12D3FF9 /* Pods_SelerioARKitBasics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,14 +79,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78F0BBE5F08FFF27B7E627D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DF49D84EBF9E499F83D1A16 /* Pods-SelerioARKitBasics.debug.xcconfig */,
+				3D032EC76977B26F52BCFBF7 /* Pods-SelerioARKitBasics.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F09F9A1A2098B83900D13BAA = {
 			isa = PBXGroup;
 			children = (
-				F00380F320A8A4930003D2CF /* SelerioARKit.framework */,
+				B7B02F3320FF52EF00458980 /* README.md */,
 				F09F9A252098B83900D13BAA /* SelerioARKitBasics */,
 				F09F9A3C2098B83A00D13BAA /* SelerioARKitBasicsTests */,
 				F09F9A242098B83900D13BAA /* Products */,
 				F09F9A482098B86000D13BAA /* Frameworks */,
+				78F0BBE5F08FFF27B7E627D8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				F09F9A492098B86000D13BAA /* ARKit.framework */,
+				0E4709990F5D5FF86970B037 /* Pods_SelerioARKitBasics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,10 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F09F9A422098B83A00D13BAA /* Build configuration list for PBXNativeTarget "SelerioARKitBasics" */;
 			buildPhases = (
+				DEF539206234429AB9742E4E /* [CP] Check Pods Manifest.lock */,
 				F09F9A1F2098B83900D13BAA /* Sources */,
 				F09F9A202098B83900D13BAA /* Frameworks */,
 				F09F9A212098B83900D13BAA /* Resources */,
 				F00380F620A8A4930003D2CF /* Embed Frameworks */,
+				D9BF5157DC882EA915C6C146 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +227,7 @@
 			files = (
 				F09F9A292098B83900D13BAA /* art.scnassets in Resources */,
 				F09F9A332098B83A00D13BAA /* LaunchScreen.storyboard in Resources */,
+				B7B02F3420FF52EF00458980 /* README.md in Resources */,
 				F09F9A302098B83A00D13BAA /* Assets.xcassets in Resources */,
 				F09F9A2E2098B83900D13BAA /* Main.storyboard in Resources */,
 			);
@@ -225,6 +241,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D9BF5157DC882EA915C6C146 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SelerioARKitBasics/Pods-SelerioARKitBasics-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/JustLog/JustLog.framework",
+				"${BUILT_PRODUCTS_DIR}/SelerioARKit/SelerioARKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JustLog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SelerioARKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SelerioARKitBasics/Pods-SelerioARKitBasics-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEF539206234429AB9742E4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SelerioARKitBasics-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F09F9A1F2098B83900D13BAA /* Sources */ = {
@@ -390,6 +451,7 @@
 		};
 		F09F9A432098B83A00D13BAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DF49D84EBF9E499F83D1A16 /* Pods-SelerioARKitBasics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -414,6 +476,7 @@
 		};
 		F09F9A442098B83A00D13BAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D032EC76977B26F52BCFBF7 /* Pods-SelerioARKitBasics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
