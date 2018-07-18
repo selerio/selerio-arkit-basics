@@ -15,7 +15,7 @@ To get started:
 
 - Clone this repo from [here](https://github.com/selerio/selerio-arkit-basics.git)
 
-- Install cocoapods, if not already installed, using `sudo gem install cocoapods`
+- Install cocoapods, if not already installed, using `brew install cocoapods`
 
 - From the root directory run `pod install` 
 
