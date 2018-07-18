@@ -17,7 +17,7 @@ To get started:
 
 - Install cocoapods, if not already installed, using `sudo gem install cocoapods`
 
-- From the root directory run pod install 
+- From the root directory run `pod install` 
 
 - Open the project in xcode by clicking on `SelerioARKitBasics.xcworkspace`
 
