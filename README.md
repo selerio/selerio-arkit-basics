@@ -21,6 +21,8 @@ To get started:
 
 - Open the project in xcode by clicking on `SelerioARKitBasics.xcworkspace`
 
+- Add the API key that you generated from the console in the file `ViewController.swift`
+
 - Build the project and run it on an ARKit compatible iOS device
 
-![Demo](./Small.gif)
+![Demo](./demo.gif)
