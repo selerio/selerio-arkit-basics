@@ -1,4 +1,5 @@
-SelerioARKit.framework*
+
+*.DS_Store
 *xcuserdata*
 
 Pods/

@@ -1,0 +1,11 @@
+framework module SwiftyBeaver {
+  umbrella header "SwiftyBeaver-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module SwiftyBeaver.Swift {
+    header "SwiftyBeaver-Swift.h"
+    requires objc
+}

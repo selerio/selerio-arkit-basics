@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B7B02F3420FF52EF00458980 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B7B02F3320FF52EF00458980 /* README.md */; };
-		C678866A715D7730F12D3FF9 /* Pods_SelerioARKitBasics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4709990F5D5FF86970B037 /* Pods_SelerioARKitBasics.framework */; };
+		F00FE0B2219DF6660040533D /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00FE0AA219DF16F0040533D /* CocoaAsyncSocket.framework */; };
+		F00FE0B3219DF6660040533D /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F00FE0AA219DF16F0040533D /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F00FE0B5219DF66B0040533D /* JustLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00FE0A9219DF16F0040533D /* JustLog.framework */; };
+		F00FE0B6219DF66B0040533D /* JustLog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F00FE0A9219DF16F0040533D /* JustLog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F00FE0B7219DF66D0040533D /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00FE0A8219DF16F0040533D /* SwiftyBeaver.framework */; };
+		F00FE0B8219DF66D0040533D /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F00FE0A8219DF16F0040533D /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F00FE0B9219DF6700040533D /* SelerioARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00FE0AB219DF16F0040533D /* SelerioARKit.framework */; };
+		F00FE0BA219DF6700040533D /* SelerioARKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F00FE0AB219DF16F0040533D /* SelerioARKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F09F9A272098B83900D13BAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F9A262098B83900D13BAA /* AppDelegate.swift */; };
 		F09F9A292098B83900D13BAA /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F09F9A282098B83900D13BAA /* art.scnassets */; };
 		F09F9A2B2098B83900D13BAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F9A2A2098B83900D13BAA /* ViewController.swift */; };
@@ -29,12 +36,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F00380F620A8A4930003D2CF /* Embed Frameworks */ = {
+		F00FE0B4219DF6660040533D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F00FE0BA219DF6700040533D /* SelerioARKit.framework in Embed Frameworks */,
+				F00FE0B3219DF6660040533D /* CocoaAsyncSocket.framework in Embed Frameworks */,
+				F00FE0B8219DF66D0040533D /* SwiftyBeaver.framework in Embed Frameworks */,
+				F00FE0B6219DF66B0040533D /* JustLog.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,10 +53,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0E4709990F5D5FF86970B037 /* Pods_SelerioARKitBasics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SelerioARKitBasics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D032EC76977B26F52BCFBF7 /* Pods-SelerioARKitBasics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelerioARKitBasics.release.xcconfig"; path = "Pods/Target Support Files/Pods-SelerioARKitBasics/Pods-SelerioARKitBasics.release.xcconfig"; sourceTree = "<group>"; };
-		3DF49D84EBF9E499F83D1A16 /* Pods-SelerioARKitBasics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelerioARKitBasics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelerioARKitBasics/Pods-SelerioARKitBasics.debug.xcconfig"; sourceTree = "<group>"; };
 		B7B02F3320FF52EF00458980 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F00FE0A8219DF16F0040533D /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Frameworks/SwiftyBeaver.framework; sourceTree = "<group>"; };
+		F00FE0A9219DF16F0040533D /* JustLog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JustLog.framework; path = Frameworks/JustLog.framework; sourceTree = "<group>"; };
+		F00FE0AA219DF16F0040533D /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Frameworks/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		F00FE0AB219DF16F0040533D /* SelerioARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SelerioARKit.framework; path = Frameworks/SelerioARKit.framework; sourceTree = "<group>"; };
 		F09F9A232098B83900D13BAA /* SelerioARKitBasics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelerioARKitBasics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09F9A262098B83900D13BAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09F9A282098B83900D13BAA /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -65,7 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C678866A715D7730F12D3FF9 /* Pods_SelerioARKitBasics.framework in Frameworks */,
+				F00FE0B9219DF6700040533D /* SelerioARKit.framework in Frameworks */,
+				F00FE0B2219DF6660040533D /* CocoaAsyncSocket.framework in Frameworks */,
+				F00FE0B7219DF66D0040533D /* SwiftyBeaver.framework in Frameworks */,
+				F00FE0B5219DF66B0040533D /* JustLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,15 +94,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		78F0BBE5F08FFF27B7E627D8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3DF49D84EBF9E499F83D1A16 /* Pods-SelerioARKitBasics.debug.xcconfig */,
-				3D032EC76977B26F52BCFBF7 /* Pods-SelerioARKitBasics.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		F09F9A1A2098B83900D13BAA = {
 			isa = PBXGroup;
 			children = (
@@ -96,7 +102,6 @@
 				F09F9A3C2098B83A00D13BAA /* SelerioARKitBasicsTests */,
 				F09F9A242098B83900D13BAA /* Products */,
 				F09F9A482098B86000D13BAA /* Frameworks */,
-				78F0BBE5F08FFF27B7E627D8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,8 +140,11 @@
 		F09F9A482098B86000D13BAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F00FE0AA219DF16F0040533D /* CocoaAsyncSocket.framework */,
+				F00FE0A9219DF16F0040533D /* JustLog.framework */,
+				F00FE0AB219DF16F0040533D /* SelerioARKit.framework */,
+				F00FE0A8219DF16F0040533D /* SwiftyBeaver.framework */,
 				F09F9A492098B86000D13BAA /* ARKit.framework */,
-				0E4709990F5D5FF86970B037 /* Pods_SelerioARKitBasics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,12 +156,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F09F9A422098B83A00D13BAA /* Build configuration list for PBXNativeTarget "SelerioARKitBasics" */;
 			buildPhases = (
-				DEF539206234429AB9742E4E /* [CP] Check Pods Manifest.lock */,
 				F09F9A1F2098B83900D13BAA /* Sources */,
 				F09F9A202098B83900D13BAA /* Frameworks */,
 				F09F9A212098B83900D13BAA /* Resources */,
-				F00380F620A8A4930003D2CF /* Embed Frameworks */,
-				D9BF5157DC882EA915C6C146 /* [CP] Embed Pods Frameworks */,
+				F00FE0B4219DF6660040533D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,9 +200,11 @@
 				TargetAttributes = {
 					F09F9A222098B83900D13BAA = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1010;
 					};
 					F09F9A382098B83A00D13BAA = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1010;
 						TestTargetID = F09F9A222098B83900D13BAA;
 					};
 				};
@@ -241,51 +249,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		D9BF5157DC882EA915C6C146 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SelerioARKitBasics/Pods-SelerioARKitBasics-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
-				"${BUILT_PRODUCTS_DIR}/JustLog/JustLog.framework",
-				"${BUILT_PRODUCTS_DIR}/SelerioARKit/SelerioARKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JustLog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SelerioARKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SelerioARKitBasics/Pods-SelerioARKitBasics-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DEF539206234429AB9742E4E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SelerioARKitBasics-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F09F9A1F2098B83900D13BAA /* Sources */ = {
@@ -451,22 +414,24 @@
 		};
 		F09F9A432098B83A00D13BAA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DF49D84EBF9E499F83D1A16 /* Pods-SelerioARKitBasics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B97M96HFJU;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = SelerioARKitBasics/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.selerio.SelerioARKitBasics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -476,22 +441,24 @@
 		};
 		F09F9A442098B83A00D13BAA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D032EC76977B26F52BCFBF7 /* Pods-SelerioARKitBasics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B97M96HFJU;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = SelerioARKitBasics/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.selerio.SelerioARKitBasics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
