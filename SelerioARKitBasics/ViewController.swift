@@ -20,6 +20,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
     var smartSession : ARSmartSession!
     var frameHandler : ARSessionDelegateHandler!
     
+    let selerioAPIKey = "l8iE3UpIbd95tbPq" // You should use your own API Key from https://console.selerio.io as this test key will soon be deactivated
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +42,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
         // *** Integrate Selerio SDK ***
         
         // Create a smart session
-        smartSession = ARSmartSession(apiKey: "", sceneView: sceneView)
+        smartSession = ARSmartSession(apiKey: selerioAPIKey, sceneView: sceneView)
         smartSession.delegate = self
         
         // Assign a delegate for processing frames from the arkit session
