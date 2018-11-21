@@ -1,12 +1,12 @@
 
-# Welcome to Selerio demo app for iOS!*
+# Welcome to Selerio demo app for iOS!
 
 All of Selerio features are fully integrated with ARKit. You can use the new features Selerio provide as well as all the ARKit functionalities you know and love!
 
 **Getting started**
 
 
-- Get your API Key* at https://console.selerio.io.  
+- Get your API Key at https://console.selerio.io.  
 
 - Clone this repo
 
