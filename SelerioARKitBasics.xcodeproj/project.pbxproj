@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151A218021A5B0E400EE3278 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A217F21A5B0E400EE3278 /* Utilities.swift */; };
 		B7B02F3420FF52EF00458980 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B7B02F3320FF52EF00458980 /* README.md */; };
 		F00FE0B2219DF6660040533D /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00FE0AA219DF16F0040533D /* CocoaAsyncSocket.framework */; };
 		F00FE0B3219DF6660040533D /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F00FE0AA219DF16F0040533D /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		151A217F21A5B0E400EE3278 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B7B02F3320FF52EF00458980 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F00FE0A8219DF16F0040533D /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Frameworks/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		F00FE0A9219DF16F0040533D /* JustLog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JustLog.framework; path = Frameworks/JustLog.framework; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				F09F9A2F2098B83A00D13BAA /* Assets.xcassets */,
 				F09F9A312098B83A00D13BAA /* LaunchScreen.storyboard */,
 				F09F9A342098B83A00D13BAA /* Info.plist */,
+				151A217F21A5B0E400EE3278 /* Utilities.swift */,
 			);
 			path = SelerioARKitBasics;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151A218021A5B0E400EE3278 /* Utilities.swift in Sources */,
 				F09F9A2B2098B83900D13BAA /* ViewController.swift in Sources */,
 				F09F9A272098B83900D13BAA /* AppDelegate.swift in Sources */,
 			);
@@ -335,6 +339,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -349,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -395,6 +400,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -403,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
