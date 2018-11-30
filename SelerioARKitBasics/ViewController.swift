@@ -69,7 +69,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
         sceneView.automaticallyUpdatesLighting = true
         
         self.setupToast()
-        self.showToast("1. Move around to map your space.\t\n  2. Tap on the map to drop tennis balls. \n3. Swipe right to toggle debug mode. ")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -122,6 +121,18 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
             print("Number of smart anchors detected: \(scene.anchors.count)")
         } else {
             print("No smart anchor has yet been detected.")
+        }
+    }
+    
+    func session(_ session: ARSmartSession, didGetInfo info: String) {
+        // Present the info being sent
+        DispatchQueue.main.async{
+            let defaultString = "1. Move around to map your space.\t\n  2. Tap on the map to drop tennis balls. \n3. Swipe right to toggle debug mode.";
+            self.showToast(info)
+            Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
+                if (defaultString.count > 0) {self.showToast(defaultString);}
+                else {self.hideToast()}
+            }
         }
     }
     
