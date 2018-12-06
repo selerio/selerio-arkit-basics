@@ -20,7 +20,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
     var smartSession : ARSmartSession!
     var frameHandler : ARSessionDelegateHandler!
     
-    let selerioAPIKey = "l8iE3UpIbd95tbPq" // You should use your own API Key from https://console.selerio.io
+    let selerioAPIKey = "rIRbDB08n6KfWXkS" // You should use your own API Key from https://console.selerio.io
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +56,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
         
         // Run the session
         smartSession.run()
+        
+        // auto detect objects and their pose 
+        smartSession.autodetect = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,8 +79,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSmartSessionDelegat
         
         // Pause the view's session
         sceneView.session.pause()
-        
-        smartSession.pause()
     }
     
     // MARK: - ARSCNViewDelegate
