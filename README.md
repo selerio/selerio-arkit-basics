@@ -9,16 +9,17 @@ All of Selerio features are fully integrated with ARKit. You can use the new fea
 
 **Getting started**
 
-
-- Get your API Key at https://console.selerio.io.  
-
 - Clone this repo
 
-- Open the project in xcode by clicking on `SelerioARKitBasics.xcodeproject`
+- call `pod install` from the root directory. Cocoapods needs to be installed.
+
+- Open the project in xcode by clicking on `SelerioARKitBasics.xcworkspace`
+
+- Get your SDK API Key from our [Console](https://console.selerio.io)  
 
 - Modify `selerioAPIKey` inside `ViewController.swift` with your own API Key.
 
-- call `pod install`, build the project and run it on an ARKit compatible iOS device
+- Build the project and run it on an ARKit compatible iOS device (iPhone7 and above)
 
 - Join us and others on <a href="https://selerio-dev.slack.com/" target="_blank">Slack</a>, for quick support!
 
