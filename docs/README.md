@@ -5,11 +5,6 @@
 
 Clone our test app on [Github](https://github.com/selerio/selerio-arkit-basics.git) and build your own Smart AR app in minutes!
 
-**Requirements**
-
-1.  Get an [api key](/dashboard)
-2.  Try out our [AKit Demo app](https://github.com/selerio/selerio-arkit-basics.git)
-
 #### Create a smart session
 
 ```
